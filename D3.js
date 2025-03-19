@@ -188,21 +188,57 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 
   switch (character.eye_color) {
     case "blue":
-      eyeColor.blue.push[character];
+      console.log(`${character.name}ha gli occhi blue`);
+      eyeColor.blue.push(character);
       break;
     case "yellow":
-      eyeColor.yellow.push[character];
+      console.log(`${character.name}ha gli occhi yellow`);
+      eyeColor.yellow.push(character);
       break;
     case "brown":
-      eyeColor.brown.push[character];
+      console.log(`${character.name}ha gli occhi brown`);
+      eyeColor.brown.push(character);
       break;
     case "red":
-      eyeColor.red.push[character];
+      console.log(`${character.name}ha gli occhi red`);
+      eyeColor.red.push(character);
       break;
     case "blue-gray":
-      eyeColor["blue-gray"].push[character];
+      console.log(`${character.name}ha gli occhi blue-gray`);
+      eyeColor["blue-gray"].push(character);
       break;
   }
 }
 
 console.log(eyeColor);
+
+const massallnpc = [];
+let totalmassnpc = 0;
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const wariors = starWarsCharacters[i];
+  //console.log(wariors.name);
+  //massallnpc.push(wariors.name);
+
+  totalmassnpc += starWarsCharacters[i].mass;
+}
+console.log(totalmassnpc);
+
+if (totalmassnpc < 500) {
+  console.log("Ship is under loaded");
+} else if (totalmassnpc > 500 && totalmassnpc < 700) {
+  console.log("Ship is half loaded");
+} else if (totalmassnpc > 700 && totalmassnpc < 900) {
+  console.log("Warning: Load is over 700");
+} else if (totalmassnpc > 900 && totalmassnpc < 1000) {
+  console.log("Critical Load: Over 900");
+} else if (totalmassnpc > 1000) {
+  console.log("DANGER! OVERLOAD ALERT: escaoe from ship now!");
+}
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot;";
+  }
+}
+console.log(starWarsCharacters);
